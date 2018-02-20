@@ -1,5 +1,7 @@
 # nagios
-Collection of Nagios plugins for EOS
+==========
+
+Collection of Nagios plugins for EOS.
 
 
 ####  📌 eos_bp_participation.py
