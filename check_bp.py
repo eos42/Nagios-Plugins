@@ -1,5 +1,3 @@
-#!/usr/bin/python
-
 import argparse
 import requests
 import sys
@@ -12,6 +10,7 @@ URLS = {
 }
 
 HOSTS = ['62.210.177.140:8888','54.38.79.109:8888','test.eosys.io:8888','ctestnet.eosio.se:8889','138.68.238.129:8888','superhero-api.tokenika.io:8888','203.59.26.145:8888']
+
 HEAD_BLOCK_INTS = [
 
 ]
@@ -43,7 +42,7 @@ def compute_average(host):
                         break;
                 if rand_index_exists == False:
                     # check if this is outlier
-                    if abs(median - HEAD_BLOCK_INTS[rand_index]) > 1000000: # case of outlier
+                    if abs(median - HEAD_BLOCK_INTS[rand_index]) > 1000: # case of outlier
                         continue
                     else:   # Value well within range
                         random_head_block_indexes.append(rand_index)
@@ -87,7 +86,7 @@ def check_head_has_incremented(host, delay=2):
 ALLOWED_FUNCTIONS = {
     'check_ratio': check_ratio,
     'check_head': check_head_has_incremented,
-    'check_head_num' : check_head_average_comparison
+    'check_fork' : check_head_average_comparison
 }
 
 parser = argparse.ArgumentParser(description='chain info checker')
@@ -95,8 +94,10 @@ parser.add_argument('host', help='host address')
 parser.add_argument('function', help='check to run', choices=ALLOWED_FUNCTIONS)
 
 
+
 if __name__ == '__main__':
     args = parser.parse_args()
+
     func = ALLOWED_FUNCTIONS[args.function]
     try:
         exit_code, message = func(args.host)
