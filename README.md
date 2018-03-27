@@ -17,7 +17,7 @@ Each function performs a particular action and EXITS with 0 if there are no issu
 * EXITS with 0 if participation rate > 5.
 * EXITS with 2 if participation rate < 5.
 
-###### usage for check_ratio
+###### Usage for check_ratio
 `check_bp.py  x.x.x.x:8888 check_ratio`
 
 
@@ -28,7 +28,7 @@ Each function performs a particular action and EXITS with 0 if there are no issu
 * EXITS with 0 if head_block_num has incremented. 
 * EXITS with 2 if head_block_num has not incremented. 
 
-###### usage for check_ratio
+###### Usage for check_head
 `check_bp.py  x.x.x.x:8888 check_head`
 
 
