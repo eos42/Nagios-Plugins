@@ -37,3 +37,13 @@ Each function performs a particular action and EXITS with 0 if there are no issu
 
 
 
+#####  (3) Check multiple hosts and saves the head_block_num, take the median average and checks against your host.
+
+* Check multiple hosts and saves the head_block_num, takes the median average. If any hosts are  
+* EXITS with 0 if head_block_num has incremented. 
+* EXITS with 2 if head_block_num difference is out of bounds(> abs(5) of average)
+
+###### Usage for check_fork
+`check_bp.py  x.x.x.x:8888 check_fork`
+
+
