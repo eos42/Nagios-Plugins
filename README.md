@@ -2,6 +2,10 @@
 
 Collection of Nagios plugins for EOS.
 
+#### To-DO
+
+* Allow for check_fork function to read hosts from file.
+
 
 ####  📌 check_bp.py
 
