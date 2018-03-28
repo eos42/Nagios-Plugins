@@ -39,7 +39,7 @@ Each function performs a particular action and EXITS with 0 if there are no issu
 
 #####  (3) Check multiple hosts and saves the head_block_num, take the median average and checks against your host.
 
-* Check multiple hosts and saves the head_block_num, takes the median average. If any hosts has a heda_block value where absolute difference from the median is > 1,000 they are exlucded from the calc.
+* Check multiple hosts and saves the head_block_num, takes the median average. If any hosts has a head_block_num value where absolute difference from the median is > 1,000 they are excluded from the calc.
 * EXITS with 0 if head_block_num has incremented. 
 * EXITS with 2 if head_block_num difference is out of bounds(> abs(5) of average)
 
