@@ -47,3 +47,7 @@ Each function performs a particular action and EXITS with 0 if there are no issu
 `check_bp.py  x.x.x.x:8888 check_fork`
 
 
+
+####  📌 check_producing.sh
+* Checks the producer list and records your unpaid_blocks integer an saves to a file.
+* Re-Checks the producer list and checks whewther number has increased. 
