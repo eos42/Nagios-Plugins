@@ -1,3 +1,5 @@
+#!/usr/bin/python
+
 import argparse
 import requests
 import sys
@@ -9,7 +11,7 @@ URLS = {
     'get_info': 'http://{host}/v1/chain/get_info'
 }
 
-HOSTS = ['62.210.177.140:8888','54.38.79.109:8888','test.eosys.io:8888','ctestnet.eosio.se:8889','138.68.238.129:8888','superhero-api.tokenika.io:8888','203.59.26.145:8888']
+HOSTS = ['eosgreen.uk.to:8889','ctestnet.eosio.se:8887','54.194.49.21:8833','superhero.cryptolions.io:8897','venom.eoscalgary.com:80','ctestnet.eosdetroit.com:8889','superheroes.eosio.africa:8888']
 
 HEAD_BLOCK_INTS = [
 
@@ -42,7 +44,7 @@ def compute_average(host):
                         break;
                 if rand_index_exists == False:
                     # check if this is outlier
-                    if abs(median - HEAD_BLOCK_INTS[rand_index]) > 1000: # case of outlier
+                    if abs(median - HEAD_BLOCK_INTS[rand_index]) > 900: # case of outlier
                         continue
                     else:   # Value well within range
                         random_head_block_indexes.append(rand_index)
@@ -73,7 +75,7 @@ def check_ratio(host, cutoff=0.5):
     return (2, 'Participation is less than {}'.format(cutoff))
 
 
-def check_head_has_incremented(host, delay=2):
+def check_head_has_incremented(host, delay=7):
     url = URLS['get_info'].format(host=host)
     fst = requests.get(url, verify=False).json()
     time.sleep(delay)
@@ -82,10 +84,19 @@ def check_head_has_incremented(host, delay=2):
         return (0, 'OK')
     return (2, 'Head block number not incremented after delay')
 
+def check_lib_has_incremented(host, delay=10):
+    url = URLS['get_info'].format(host=host)
+    fst = requests.get(url, verify=False).json()
+    time.sleep(delay)
+    snd = requests.get(url, verify=False).json()
+    if int(snd['head_block_num']) > int(fst['head_block_num']):
+        return (0, 'OK')
+    return (2, 'Head block number not incremented after delay')
 
 ALLOWED_FUNCTIONS = {
     'check_ratio': check_ratio,
     'check_head': check_head_has_incremented,
+    'check_lib': check_lib_has_incremented,
     'check_fork' : check_head_average_comparison
 }
 
