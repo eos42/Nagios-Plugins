@@ -47,6 +47,15 @@ Each function performs a particular action and EXITS with 0 if there are no issu
 `check_bp.py  x.x.x.x:8888 check_fork`
 
 
+#####  (4) Check the last_irreversible_block_num of the chain is incrementing 
+
+* Checks your host's last_irreversible_block_num and saves that as a varaible, waits 10 secodns and checks again.
+* EXITS with 0 if last_irreversible_block_num has incremented. 
+* EXITS with 2 if last_irreversible_block_num has not incremented. 
+
+###### Usage for check_head
+`check_bp.py  x.x.x.x:8888 check_head`
+
 
 ####  📌 check_producing.sh
 * Checks the producer list and records your unpaid_blocks integer an saves to a file.
