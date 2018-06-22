@@ -16,7 +16,7 @@ echo $UNPAID > $FILEDIR
 if [[ $UNPAID -eq $OLD ]];
 then
   echo "Not Producing"
-  exit 1
+  exit 2
 else
   echo "Successfully Producing" >&2
   exit 0
