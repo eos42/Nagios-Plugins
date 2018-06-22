@@ -53,10 +53,15 @@ Each function performs a particular action and EXITS with 0 if there are no issu
 * EXITS with 0 if last_irreversible_block_num has incremented. 
 * EXITS with 2 if last_irreversible_block_num has not incremented. 
 
-###### Usage for check_head
-`check_bp.py  x.x.x.x:8888 check_head`
+###### Usage for check_lib
+`check_bp.py  x.x.x.x:8888 check_lib`
 
 
 ####  📌 check_producing.sh
 * Checks the producer list and records your unpaid_blocks integer an saves to a file.
 * Re-Checks the producer list and checks whewther number has increased. 
+
+
+####  📌 check_last_claim.sh
+* Checks the last time your producer claimedrewards and ensures the value is not > 24 hours.
+
