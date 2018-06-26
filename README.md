@@ -65,3 +65,5 @@ Each function performs a particular action and EXITS with 0 if there are no issu
 ####  📌 check_last_claim.sh
 * Checks the last time your producer claimedrewards and ensures the value is not > 24 hours.
 
+####  📌 check_history.sh
+* Checks whether your BASH history contains any EOS wallet passwords OR Private keys.
