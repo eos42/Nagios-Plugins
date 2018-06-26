@@ -58,12 +58,24 @@ Each function performs a particular action and EXITS with 0 if there are no issu
 
 
 ####  📌 check_producing.sh
+
 * Checks the producer list and records your unpaid_blocks integer an saves to a file.
 * Re-Checks the producer list and checks whewther number has increased. 
 
+###### Usage 
+`check_producing.sh`
+
 
 ####  📌 check_last_claim.sh
+
 * Checks the last time your producer claimedrewards and ensures the value is not > 24 hours.
 
+###### Usage 
+`check_last_claim.sh`
+
 ####  📌 check_history.sh
+
 * Checks whether your BASH history contains any EOS wallet passwords OR Private keys.
+
+###### Usage 
+`check_history.sh`
