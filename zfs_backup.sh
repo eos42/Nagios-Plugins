@@ -11,6 +11,6 @@ if [ $PAST -gt $LAST_BACKUP ]; then
         echo "ZFS Snapshots have stopped working"
         exit 2
 else
-        echo "ZFS Snaptshots are workoing fine."
+        echo "ZFS Snaptshots are working fine."
         exit 0
 fi
