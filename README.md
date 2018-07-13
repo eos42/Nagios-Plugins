@@ -79,3 +79,11 @@ Each function performs a particular action and EXITS with 0 if there are no issu
 
 ###### Usage 
 `check_history.sh`
+
+####  📌 zfs_backup.sh
+
+* Checks whether your ZFS snapshots contain a recent snapshot.
+
+###### Usage 
+`zfs_backup.sh`
+
