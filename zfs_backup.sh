@@ -4,7 +4,7 @@
 PAST=$(date -d "2 hours ago" +'%Y%m%d%H')
 
 # Get timestamp of last backup for comparison
-LAST_BACKUP=$(sudo zfs list -t snapshot | tail -1 | cut -d' ' -f1 | cut -d'@' -f2)
+LAST_BACKUP=$(zfs list -t snapshot | tail -1 | cut -d' ' -f1 | cut -d'@' -f2)
 
 
 if [ $PAST -gt $LAST_BACKUP ]; then
