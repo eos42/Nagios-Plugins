@@ -1,4 +1,5 @@
-DIR=/Ghostbusters/ghostbusters-eos42freedom
+#!/bin/bash
+DIR=/opt
 CLEOS=$DIR/cleos.sh
 
 #Set max CPU average to compare against
@@ -25,9 +26,9 @@ AVG=$(awk '{s+=$1} END {print s/NR}' CPUSTATS)
 
 
 if (( $(echo "$AVG > $MAX" |bc -l) )); then
-  echo "Chintai CPU is above $MAX usage, currently averaging $AVG usage | Chintaileasecpu $AVG "
+  echo "Chintai CPU is above $MAX usage, currently averaging $AVG usage | Chintaileasecpu=$AVG "
   exit 2
 else
-  echo "Chintai CPU is below $MAX usage, currently averaging $AVG usage | Chintaileasecpu $AVG"
+  echo "Chintai CPU is below $MAX usage, currently averaging $AVG usage | Chintaileasecpu=$AVG"
   exit 0
 fi
