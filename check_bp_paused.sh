@@ -11,7 +11,7 @@
 
 # Change these vars based on your node configuration
 NODEOS_HTTP=$1
-NODEOS_PORT=8888
+NODEOS_PORT=$2
 
 
 
