@@ -91,3 +91,8 @@ Each function performs a particular action and EXITS with 0 if there are no issu
 ####  📌 check_account_ram.sh
 
 * Checks teh RAM usage for an account on chain and alerts if current usage is over $MAX variable.
+
+####  📌 account-cpu.sh
+
+* Checks CPU usage of account over 60 seconds period and compares average to $MAX variable, if higher it alerts.
+
